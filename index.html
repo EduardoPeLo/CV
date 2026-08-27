@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eduardo Pedroza López — Curriculum Vitae</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --mint: #8FC9A9;
+    --mint-dark: #4E8B6C;
+    --mint-pale: #EAF5EE;
+    --ink: #202323;
+    --ink-soft: #4B4F4F;
+    --paper: #FFFFFF;
+    --rule: #D7E9DE;
+    --maxw: 860px;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Inter", "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,h2,h3{
+    font-family: "Source Serif 4", Georgia, serif;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  a{ color: var(--mint-dark); text-decoration: none; }
+  a:hover{ text-decoration: underline; }
+
+  /* ---------- NAVBAR ---------- */
+  header.nav{
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(255,255,255,0.96);
+    border-bottom: 1px solid var(--rule);
+    backdrop-filter: saturate(180%) blur(6px);
+  }
+  .nav-inner{
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .nav-name{
+    font-family: "Source Serif 4", serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .nav-links{
+    display: flex;
+    gap: 22px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  .nav-links a{
+    color: var(--ink-soft);
+    font-size: 0.86rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .nav-links a:hover{ color: var(--mint-dark); text-decoration: none; }
+
+  .btn-download{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--mint-dark);
+    color: #fff;
+    border: 1px solid var(--mint-dark);
+    padding: 9px 18px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .btn-download:hover{
+    background: #fff;
+    color: var(--mint-dark);
+    text-decoration: none;
+  }
+
+  /* ---------- LAYOUT ---------- */
+  main{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding: 64px 0 40px;
+    border-bottom: 3px solid var(--mint);
+  }
+  .hero h1{
+    font-size: 2.4rem;
+    margin-bottom: 6px;
+  }
+  .hero .role{
+    font-size: 1.05rem;
+    color: var(--mint-dark);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  .contact-line{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+  .contact-line span.sep{ color: var(--mint); }
+
+  /* ---------- SECTIONS ---------- */
+  section{
+    padding: 40px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  section:last-of-type{ border-bottom: none; }
+
+  .eyebrow{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .eyebrow .mark{
+    width: 10px;
+    height: 10px;
+    background: var(--mint);
+    border-radius: 1px;
+    flex-shrink: 0;
+  }
+  .eyebrow h2{
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  p{ margin: 0 0 12px; color: var(--ink-soft); }
+
+  /* ---------- EDUCATION / PROJECT ENTRIES ---------- */
+  .entry{
+    margin-bottom: 26px;
+  }
+  .entry:last-child{ margin-bottom: 0; }
+  .entry-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .entry-head h3{
+    font-size: 1.08rem;
+    color: var(--ink);
+  }
+  .entry-date{
+    font-size: 0.85rem;
+    color: var(--mint-dark);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .entry-sub{
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    margin: 2px 0 10px;
+  }
+  ul.bullets{
+    margin: 0;
+    padding-left: 18px;
+  }
+  ul.bullets li{
+    color: var(--ink-soft);
+    margin-bottom: 7px;
+    font-size: 0.95rem;
+  }
+  ul.bullets li::marker{ color: var(--mint-dark); }
+
+  /* ---------- SKILLS ---------- */
+  .skill-row{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 6px 20px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--rule);
+    font-size: 0.95rem;
+  }
+  .skill-row:last-child{ border-bottom: none; }
+  .skill-label{
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .skill-value{ color: var(--ink-soft); }
+
+  /* ---------- SIMPLE LISTS (certs, strengths) ---------- */
+  ul.plain{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  ul.plain li{
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+  ul.plain li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background: var(--mint);
+    border-radius: 1px;
+  }
+
+  .two-col{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 30px 28px 60px;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+  }
+  footer a{ color: var(--mint-dark); }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 720px){
+    .nav-links{ display: none; }
+    .hero{ padding: 44px 0 30px; }
+    .hero h1{ font-size: 1.9rem; }
+    .two-col{ grid-template-columns: 1fr; }
+    .skill-row{ grid-template-columns: 1fr; gap: 2px; }
+  }
+
+  /* ---------- ACCESSIBILITY ---------- */
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--mint-dark);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <span class="nav-name">Eduardo Pedroza López</span>
+    <ul class="nav-links">
+      <li><a href="#perfil">Perfil</a></li>
+      <li><a href="#formacion">Formación</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#idiomas">Idiomas</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a class="btn-download" href="Eduardo_Pedroza_Lopez_CV.pdf" download>Descargar CV</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="top">
+    <h1>Eduardo Pedroza López</h1>
+    <div class="role">Estudiante de Ingeniería en Sistemas Computacionales — Investigador y Desarrollador de Software</div>
+    <div class="contact-line">
+      <span>Aguascalientes, Aguascalientes</span>
+      <span class="sep">|</span>
+      <span><a href="mailto:pedrozaeduardo53@gmail.com">pedrozaeduardo53@gmail.com</a></span>
+      <span class="sep">|</span>
+      <span>+52 449 539 6079</span>
+      <span class="sep">|</span>
+      <span><a href="https://www.linkedin.com/in/eduardo-pedroza-52b002396" target="_blank" rel="noopener">LinkedIn</a></span>
+      <span class="sep">|</span>
+      <span><a href="https://github.com/EduardoPeLo" target="_blank" rel="noopener">GitHub</a></span>
+    </div>
+  </section>
+
+  <section id="perfil">
+    <div class="eyebrow"><span class="mark"></span><h2>Perfil Profesional</h2></div>
+    <p>Estudiante de séptimo semestre de Ingeniería en Sistemas Computacionales en la Universidad Autónoma de Aguascalientes (UAA), con promedio de 9.14. Con experiencia en proyectos de investigación y desarrollo de software, actualmente colaborando en el desarrollo de una aplicación institucional para la universidad. Interesado en el desarrollo de software, la ingeniería de aplicaciones y la investigación aplicada a la computación, con habilidades para liderar equipos y trabajar bajo presión.</p>
+  </section>
+
+  <section id="formacion">
+    <div class="eyebrow"><span class="mark"></span><h2>Formación Académica</h2></div>
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Universidad Autónoma de Aguascalientes (UAA)</h3>
+        <span class="entry-date">2023 – Actualidad</span>
+      </div>
+      <div class="entry-sub">Ingeniería en Sistemas Computacionales — 7° semestre (en curso) · Promedio general: 9.14</div>
+    </div>
+  </section>
+
+  <section id="proyectos">
+    <div class="eyebrow"><span class="mark"></span><h2>Proyectos Académicos y de Investigación</h2></div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Intervención Sistemática Familiar</h3>
+        <span class="entry-date">2026</span>
+      </div>
+      <div class="entry-sub">Desarrollador Web e Investigador</div>
+      <ul class="bullets">
+        <li>Desarrollé una aplicación web orientada a fortalecer la red de apoyo de adultos mayores con enfermedades crónicas (como diabetes), evitando la pérdida de su independencia y promoviendo la participación de familiares que no son cuidadores principales ni secundarios.</li>
+        <li>Implementé el frontend con HTML, CSS y JavaScript, e integré un chatbot basado en modelos de inteligencia artificial para brindar seguimiento psicológico tanto a cuidadores como a adultos mayores.</li>
+        <li>Utilicé Supabase como base de datos y backend, y Netlify para el despliegue y hosting de la aplicación.</li>
+        <li>Realicé la recolección de información con familiares de pacientes para entrenar el modelo de IA y mejorar la experiencia y precisión de la plataforma.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Aplicación Institucional — Universidad Autónoma de Aguascalientes</h3>
+        <span class="entry-date">2026 – Actualidad</span>
+      </div>
+      <div class="entry-sub">Desarrollador Mendix</div>
+      <ul class="bullets">
+        <li>Colaboro en el desarrollo de una aplicación institucional para la UAA utilizando la plataforma low-code Mendix.</li>
+        <li>Aplico buenas prácticas de desarrollo y diseño de procesos orientadas a las necesidades de la comunidad universitaria.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="habilidades">
+    <div class="eyebrow"><span class="mark"></span><h2>Habilidades Técnicas</h2></div>
+    <div class="skill-row">
+      <span class="skill-label">Lenguajes de programación</span>
+      <span class="skill-value">C, C++, Python, C#, R</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">Desarrollo Web</span>
+      <span class="skill-value">HTML, CSS, JavaScript, Angular, React</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">Plataformas Low-Code</span>
+      <span class="skill-value">Mendix</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">Bases de Datos y Despliegue</span>
+      <span class="skill-value">SQL, Supabase, Netlify</span>
+    </div>
+  </section>
+
+  <section id="certificaciones">
+    <div class="eyebrow"><span class="mark"></span><h2>Cursos y Certificaciones</h2></div>
+    <ul class="plain">
+      <li>Mendix Rapid Developer Certification</li>
+    </ul>
+  </section>
+
+  <section id="idiomas">
+    <div class="eyebrow"><span class="mark"></span><h2>Idiomas y Fortalezas</h2></div>
+    <div class="two-col">
+      <div>
+        <div class="entry-sub" style="margin-bottom:10px;">Idiomas</div>
+        <ul class="plain">
+          <li>Español — Nativo</li>
+          <li>Inglés — Nivel B2 (Intermedio-Alto)</li>
+        </ul>
+      </div>
+      <div>
+        <div class="entry-sub" style="margin-bottom:10px;">Fortalezas</div>
+        <ul class="plain">
+          <li>Liderazgo</li>
+          <li>Trabajo bajo presión</li>
+          <li>Trabajo en equipo</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contacto">
+  <p> Contacto <a href="mailto:pedrozaeduardo53@gmail.com">pedrozaeduardo53@gmail.com</a> o encuéntrame en <a href="https://www.linkedin.com/in/eduardo-pedroza-52b002396" target="_blank" rel="noopener">LinkedIn</a> y <a href="https://github.com/EduardoPeLo" target="_blank" rel="noopener">GitHub</a>.</p>
+  <p>Aguascalientes, México</p>
+</footer>
+
+</body>
+</html>
